@@ -40,3 +40,28 @@ body{
     transform: rotate(360deg);
   }
 }
+
+nav ul{
+  list-style-type: none;
+}
+nav li{
+  display: inline;
+}
+nav a{
+  text-decoration: none;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  width: 200px;
+  color: black;
+  background-color: #999;
+}
+nav a:hover{
+  background-color: black;
+  color: white;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px;
+}

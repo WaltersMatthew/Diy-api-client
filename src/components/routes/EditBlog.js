@@ -31,7 +31,9 @@ export default function EditBlog() {
 
     const handleSubmit = async e => {
         try {
-            
+            e.preventDefault()
+            const response = await axios.put(`${process.env.REACT_APP_SERVER_URL}/blogs/${id}`, form)
+            navigate(`/blogs/${id}`)
         } catch (error) {
             console.warn(error)
             if(error.response){
@@ -68,6 +70,7 @@ export default function EditBlog() {
                         onChange={e => setForm({...form, title: e.target.value})}
                     />
                 </div>
+                
                 <div>
                     <label htmlFor='body'>Body:</label>
                     <textarea 
@@ -81,8 +84,9 @@ export default function EditBlog() {
                     </textarea>
                 </div>
 
-                <button type='submit'>Submit your blog</button>
+                <button type='submit'>Submit changes</button>
             </form>
+            <Link to={`/blogs/${id}`}>Discard Changes</Link>
         </div>
     )
 }

@@ -33,6 +33,7 @@ export default function Blogs() {
     })
     return(
         <div>
+            {errMessage}
             <h1>All Blogs</h1>
             {blogLinks}
         </div>
